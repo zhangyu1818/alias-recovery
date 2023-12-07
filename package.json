@@ -1,0 +1,32 @@
+{
+  "name": "alias-recovery",
+  "version": "1.0.0",
+  "description": "alias recovery.",
+  "main": "index.cjs",
+  "bin": {
+    "ar": "./lib.cjs"
+  },
+  "keywords": [
+    "alias recovery"
+  ],
+  "files": [
+    "index.cjs",
+    "lib.cjs"
+  ],
+  "type": "commonjs",
+  "author": {
+    "name": "zhangyu1818",
+    "email": "hey@zhangyu.dev"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "prettier": "^3.1.0"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.23.5",
+    "@babel/parser": "^7.23.5",
+    "@babel/traverse": "^7.23.5",
+    "glob": "^10.3.10"
+  }
+}
