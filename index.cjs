@@ -3,6 +3,7 @@ const path = require('path')
 const parser = require('@babel/parser')
 const traverse = require('@babel/traverse').default
 const generate = require('@babel/generator').default
+const normalize = require('normalize-path');
 
 const processFile = (filePath, alias) => {
   const sourceCode = fs.readFileSync(filePath, 'utf-8')
@@ -20,7 +21,7 @@ const processFile = (filePath, alias) => {
         if (value.startsWith(aliasPath)) {
           const absolutePath = alias[aliasPath]
           const fileDir = path.dirname(filePath)
-          const newPath = path.relative(fileDir, absolutePath)
+          const newPath = normalize(path.relative(fileDir, absolutePath))
           node.source.value = value.replace(aliasPath, newPath)
         }
       })

@@ -27,6 +27,7 @@
     "@babel/generator": "^7.23.5",
     "@babel/parser": "^7.23.5",
     "@babel/traverse": "^7.23.5",
-    "glob": "^10.3.10"
+    "glob": "^10.3.10",
+    "normalize-path": "^3.0.0"
   }
 }
