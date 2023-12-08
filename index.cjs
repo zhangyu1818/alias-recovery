@@ -21,7 +21,10 @@ const processFile = (filePath, alias) => {
         if (value.startsWith(aliasPath)) {
           const absolutePath = alias[aliasPath]
           const fileDir = path.dirname(filePath)
-          const newPath = normalize(path.relative(fileDir, absolutePath))
+          let newPath = normalize(path.relative(fileDir, absolutePath))
+          if (newPath === ""){
+            newPath = "./"
+          }
           node.source.value = value.replace(aliasPath, newPath)
         }
       })
